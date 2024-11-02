@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" class="[scrollbar-gutter:stable] scroll-smooth ">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="csrf-token" content={get_csrf_token()} />
+    <.live_title suffix=" · Phoenix Framework">
+      <%= assigns[:page_title] || "Sites Institucionais | Web developer | Lojas Virtuais" %>
+    </.live_title>
+    <link phx-track-static rel="stylesheet" href={~p"/assets/app.css"} />
+    <link rel="icon" type="image/x-icon" href={~p"/images/Vector-logo-blue.png"}> 
+    <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"}>
+    </script>
+  </head>
+  <body class="bg-black">
+    <%= @inner_content %>
+  </body>
+</html>
