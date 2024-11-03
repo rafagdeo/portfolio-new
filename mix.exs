@@ -81,7 +81,10 @@ defmodule Rafaelguilherme.MixProject do
         "tailwind rafaelguilherme --minify",
         "esbuild rafaelguilherme --minify",
         "phx.digest"
-      ]
+      ],
+      setup: ["deps.get", "cmd npm install --prefix assets"],
+      "assets.deploy": ["cmd npm run deploy --prefix assets", "phx.digest"],
+      compile: ["setup", "assets.deploy"]
     ]
   end
 end
