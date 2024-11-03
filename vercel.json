@@ -1,8 +1,22 @@
 {
   "builds": [
-    { "src": "mix.exs", "use": "@vercel/phoenix" }
+    {
+      "src": "mix.exs",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "priv/static"
+      }
+    }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "/" }
-  ]
-}
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+    "scripts": {
+      "deploy": "npm run build && mix phx.digest"
+    }
+  }
+
+

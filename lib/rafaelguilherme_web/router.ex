@@ -20,7 +20,6 @@ defmodule RafaelguilhermeWeb.Router do
     get "/", PageController, :home
   end
 
-
   # Other scopes may use custom stacks.
   # scope "/api", RafaelguilhermeWeb do
   #   pipe_through :api
